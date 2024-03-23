@@ -8,20 +8,58 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   width: 1280px;
-  height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid yellow;
+  border: 2px solid rgba(238, 238, 238, 0.542);
 }
 
 .weather-box {
+  width: 100%;
+  text-align: center;
+}
+
+.weather-box .city-name {
+  font-size: 2.4em;
+  color: #ffffffba;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+}
+
+.weather-box .city-temp {
+  font-size: 8.6em;
+  color: #ffffffac;
+  font-family: "Russo One", sans-serif;
+  font-weight: 400;
+}
+
+.weather-box .city-weather {
+  display: inline-block;
+  text-align: center;
+}
+
+.weather-box .city-weather img {
+  width: 100px;
+  height: 100px;
+}
+
+.weather-box .city-weather .city-description {
+  font-size: 2em;
+  margin-bottom: 2em;
+  color: #ffffffba;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
 }
 
 .weather-btn {
@@ -30,16 +68,17 @@ body {
 }
 
 .weather-btn button {
-  margin: 4em 2em;
-  padding: 1em 3.2em;
+  margin: 4em 1em;
+  padding: 1.2em 3.2em;
   border: none;
   background: rgb(243, 247, 255);
   opacity: 0.6;
-  cursor: pointer;
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .weather-btn button:hover {
   background: rgb(243, 247, 255);
   opacity: 1;
+  cursor: pointer;
 }
