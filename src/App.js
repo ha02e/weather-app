@@ -11,6 +11,7 @@ import WeatherButton from "./component/WeatherButton";
 //6. 데이터를 들고오는 동안 로딩 스피너
 function App() {
   const [weather, setWeather] = useState(null);
+  const cities = ["Seoul", "Tokyo", "Shanghai", "NewYork", "Paris", "Italy"];
 
   const getCurrentLocation = () => {
     // console.log("getCurrentLocation");
@@ -36,7 +37,7 @@ function App() {
   return (
     <div>
       <div className="container">
-        <WeatherButton />
+        <WeatherButton cities={cities} />
         <WeatherBox weather={weather} />
       </div>
     </div>
