@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  background: url(https://images.unsplash.com/photo-1563293756-857fc846d0d1?q=80&w=3885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  width: 1280px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid yellow;
+}
+
+.weather-box {
+}
+
+.weather-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.weather-btn button {
+  margin: 4em 2em;
+  padding: 1em 3.2em;
+  border: none;
+  background: rgb(243, 247, 255);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.weather-btn button:hover {
+  background: rgb(243, 247, 255);
+  opacity: 1;
+}
