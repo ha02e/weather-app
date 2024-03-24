@@ -99,16 +99,24 @@ body {
 
 .weather-btn button {
   margin: 2em 1em;
-  padding: 1.2em 3.2em;
+  padding: 1.2em 2em;
   border: none;
   background: rgb(243, 247, 255);
   opacity: 0.6;
   transition: all 0.5s;
   cursor: pointer;
+  font-size: 1em;
 }
 
 .weather-btn button:hover {
   background: rgb(243, 247, 255);
   opacity: 1;
   cursor: pointer;
+}
+
+.weather-btn button.selected {
+  background: rgb(243, 247, 255);
+  opacity: 1;
+  font-weight: bold;
+  color: hsla(215, 100%, 52%, 0.975);
 }

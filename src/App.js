@@ -68,7 +68,7 @@ function App() {
         <WeatherButton
           cities={cities}
           controlCity={controlCity}
-          setCity={setCity}
+          selectedCity={city}
         />
         {loading ? (
           <ClipLoader
