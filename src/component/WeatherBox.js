@@ -27,17 +27,24 @@ const WeatherBox = ({ weather }) => {
       </h2>
       <div className="today-date">{todayDate}</div>
       <div>
+        <div className="city-weather">
+          <img
+            src={`http://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`}
+          />
+          <h3 className="city-description">
+            {weather?.weather[0].description}
+          </h3>
+        </div>
         <h1 className="city-temp">
           {Math.floor(weather?.main.temp)}&#8451;
           {/*  / {Math.floor(weather?.main.temp * 1.8 + 32)}&#8457; */}
         </h1>
-        <div>최저기온 / 최고기온</div>
-      </div>
-      <div className="city-weather">
-        <img
-          src={`http://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`}
-        />
-        <h3 className="city-description">{weather?.weather[0].description}</h3>
+        <div className="city-temp-detail">
+          최저기온{Math.floor(weather?.main.temp_min)} / 최고기온
+          {Math.floor(weather?.main.temp_max)} /{" "}
+          <span class="material-symbols-outlined">humidity_percentage</span>
+          <span>{Math.floor(weather?.main.pressure)}&#37;</span>
+        </div>
       </div>
     </div>
   );
