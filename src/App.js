@@ -14,6 +14,8 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState("");
   const [loading, setLoading] = useState(false);
+  const [apiError, setAPIError] = useState("");
+
   const cities = ["Seoul", "Tokyo", "Shanghai", "New York", "Paris", "Italy"];
 
   const controlCity = (city) => {
@@ -35,23 +37,35 @@ function App() {
   };
 
   const getWeatherByCurrentLocation = async (lat, lon) => {
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=cfa14e4abedc70a4e4fc69237b24c8bc`;
-    setLoading(true);
-    let response = await fetch(url);
-    let data = await response.json();
-    console.log("data", data);
-    setWeather(data);
-    setLoading(false);
+    try {
+      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=cfa14e4abedc70a4e4fc69237b24c8bc`;
+      setLoading(true);
+      let response = await fetch(url);
+      let data = await response.json();
+      // console.log("data", data);
+      setWeather(data);
+      setLoading(false);
+    } catch (error) {
+      console.log(error.message);
+      setAPIError(error.message);
+      setLoading(false);
+    }
   };
 
   const getWeatherByCity = async () => {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=cfa14e4abedc70a4e4fc69237b24c8bc`;
-    setLoading(true);
-    let response = await fetch(url);
-    let data = await response.json();
-    console.log("data", data);
-    setWeather(data);
-    setLoading(false);
+    try {
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=cfa14e4abedc70a4e4fc69237b24c8bc`;
+      setLoading(true);
+      let response = await fetch(url);
+      let data = await response.json();
+      // console.log("data", data);
+      setWeather(data);
+      setLoading(false);
+    } catch (error) {
+      console.log(error.message);
+      setAPIError(error.message);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -78,8 +92,10 @@ function App() {
             aria-label="Loading Spinner"
             data-testid="loader"
           />
-        ) : (
+        ) : !apiError ? (
           <WeatherBox weather={weather} />
+        ) : (
+          apiError
         )}
       </div>
     </div>

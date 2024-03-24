@@ -1,7 +1,7 @@
 import React from "react";
 
 const WeatherBox = ({ weather }) => {
-  console.log("weather??", weather);
+  // console.log("weather??", weather);
 
   const getTodayDate = () => {
     let today = new Date();
