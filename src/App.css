@@ -29,11 +29,26 @@ body {
 }
 
 .weather-box .city-name {
-  font-size: 2.4em;
+  font-size: 2.5em;
   color: #ffffffba;
   font-family: "Noto Sans KR", sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-box .city-name .material-symbols-outlined {
+  font-size: 1em;
+}
+
+.weather-box .today-date {
+  font-size: 1.2em;
+  color: #ffffffba;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
 }
 
 .weather-box .city-temp {
