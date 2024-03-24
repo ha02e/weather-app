@@ -40,10 +40,10 @@ const WeatherBox = ({ weather }) => {
           {/*  / {Math.floor(weather?.main.temp * 1.8 + 32)}&#8457; */}
         </h1>
         <div className="city-temp-detail">
-          최저기온{Math.floor(weather?.main.temp_min)} / 최고기온
-          {Math.floor(weather?.main.temp_max)} /{" "}
-          <span class="material-symbols-outlined">humidity_percentage</span>
-          <span>{Math.floor(weather?.main.pressure)}&#37;</span>
+          min&nbsp;{Math.floor(weather?.main.temp_min)}&#8451; / max&nbsp;
+          {Math.floor(weather?.main.temp_max)}&#8451; /{" "}
+          <span class="material-symbols-outlined">humidity_low</span>
+          <span>{Math.floor(weather?.main.humidity)}&#37;</span>
         </div>
       </div>
     </div>
